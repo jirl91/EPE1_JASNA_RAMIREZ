@@ -4,10 +4,10 @@ Imports Excel = Microsoft.Office.Interop.Excel
 
 Public Class Form1
 
-
+    'Boton cargar 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnCarga.Click
         Try
-            Dim rutaArchivo As String = "C:\Users\Prueba jasna\Desktop\Lista.xls"
+            Dim rutaArchivo As String = "C:\Users\Prueba jasna\Desktop\Lista.xls" 'Informa donde está la ruta del archivo
 
             'Instancia de aplicacion Excel
 
@@ -51,7 +51,7 @@ Public Class Form1
         End Try
 
     End Sub
-
+    ' Método para liberar recursos de objetos COM utilizados por Excel
     Private Sub ReleaseObject(ByVal obj As Object)
 
         Try
@@ -69,8 +69,10 @@ Public Class Form1
     Private Sub cmbProductos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbProductos.SelectedIndexChanged
         Try
 
-            Dim rutaArchivo As String = "C:\Users\Prueba jasna\Desktop\Lista.xls"
+            Dim rutaArchivo As String = "C:\Users\Prueba jasna\Desktop\Lista.xls" 'Informa donde está la ruta del archivo
 
+
+            'Instancia de aplicacion Excel
             Dim xlApp As Excel.Application = New Excel.Application()
             Dim xlWorkBook As Excel.Workbook = xlApp.Workbooks.Open(rutaArchivo)
             Dim xlWorkSheet As Excel.Worksheet = xlWorkBook.Sheets(1)
